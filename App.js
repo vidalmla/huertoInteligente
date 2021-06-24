@@ -1,13 +1,18 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import Llego from './src/screens/Llego';
+import { NavigationContainer } from '@react-navigation/native';
 
+import Navegacion from './src/Navegación/Navegacion';
 
-const App = (props) => {
+const App = () =>
+{
 	return (
 		
-		<Llego/>
-	)
+		<NavigationContainer>
+			<Navegacion />
+
+		</NavigationContainer>
+			
+	);
 };
 
 export default App;
