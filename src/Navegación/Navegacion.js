@@ -10,9 +10,9 @@ import Dasboard from './../screens/Dasboard';
 import Cuenta from './../screens/Cuenta';
 //iconos
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 const Navigation = (props) =>
@@ -30,9 +30,11 @@ const Navigation = (props) =>
                     left: 0,
                     right: 0,
                     elevation: 0,
-                    borderRadius: 20,
+                    borderRadius: 50,
                     height: 75,
                     ...styles.sombra,
+                    marginVertical: 25,
+                    marginHorizontal: 15
                 }
         }}
         >
@@ -43,11 +45,7 @@ const Navigation = (props) =>
                             <Ionicons
                                 name="notifications"
                                 size={40}
-                                color="#D0AF84" />
-                            
-                            <Text style={styles.tabtext}>
-                                Notificaciones
-                            </Text>
+                                color="#536162" />
                         </View>
                     ),
                 }}
@@ -70,23 +68,23 @@ const Navigation = (props) =>
             <Tab.Screen name="Dasboard" component={Dasboard}
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabnav}>
-                            {/*<Image
-                            source = {require("../image/icons/Dasboard.png")}
-                                resizeMode="contain"
+                        <View style={styles.tabnav, {
+                            backgroundColor: '#F0E3CA',
+                            padding: 8,
+                            borderRadius: 50
+                        }}>
+                            <Image
+                            source={require("../image/icons/dasborad.png")}
                                 style={{
-                                    width: 25,
-                                    height: 25,
+                                    width: 30,
+                                    height: 30,
                                 }}
-                            />*/}
-                            <MaterialIcons
+                            />
+                            {/*<Entypo
                                 
-                                name="local-florist"
+                                name="home"
                                 size={40}
-                                color="#61B15A"/>
-                            <Text style={styles.tabtext}>
-                                Dasboard
-                            </Text>
+                            color="#536162"/>*/}
                         </View>
                     ),
                 }}
@@ -98,10 +96,7 @@ const Navigation = (props) =>
                             <FontAwesome
                                 name="user-circle"
                                 size={40}
-                                color="#865439" />
-                            <Text style={styles.tabtext}>
-                                Cuenta
-                            </Text>
+                                color="#536162" />
                         </View>
                     ),
                 }}
