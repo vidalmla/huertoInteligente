@@ -10,7 +10,7 @@ import Dasboard from './../screens/Dasboard';
 import Cuenta from './../screens/Cuenta';
 //iconos
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
@@ -24,17 +24,8 @@ const Navigation = (props) =>
                 activeTintColor: 'green',
                 inactiveTintColor: 'gray',
                 style: {
-                    position: 'absolute',
-                    backgroundColor: "#fff",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    elevation: 0,
-                    borderRadius: 50,
-                    height: 75,
-                    ...styles.sombra,
-                    marginVertical: 25,
-                    marginHorizontal: 15
+                    ...styles.barra,
+                    ...styles.sombra
                 }
         }}
         >
@@ -43,8 +34,8 @@ const Navigation = (props) =>
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabnav}>
                             <Ionicons
-                                name="notifications"
-                                size={40}
+                                name="notifications-circle-outline"
+                                size={50}
                                 color="#536162" />
                         </View>
                     ),
@@ -93,7 +84,7 @@ const Navigation = (props) =>
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabnav}>
-                            <FontAwesome
+                            <FontAwesome5
                                 name="user-circle"
                                 size={40}
                                 color="#536162" />
