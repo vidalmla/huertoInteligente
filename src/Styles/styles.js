@@ -89,12 +89,8 @@ const styles = StyleSheet.create({
     barra: {
         position: 'absolute',
         backgroundColor: "#fff",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        elevation: 0,
         borderRadius: 50,
-        height: 75,
+        height: 70,
         marginVertical: 25,
         marginHorizontal: 15,
     },

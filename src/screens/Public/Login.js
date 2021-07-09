@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, Button, Dimensions } from "react-native";
-import styles from "../Styles/styles";
+import styles from "./../../Styles/styles";
 
 //Dimensiones de 3 cuarto de la pantalla
 const { width, height } = Dimensions.get("window");
@@ -16,7 +16,7 @@ const Login = (props) => {
     >
       <View style={styles.inicio}>
         <Image
-          source={require("./../image/flor.jpg")}
+          source={require("./../../image/flor.jpg")}
           style={{ flex: 1, height: null, width: null }}
         />
       </View>
@@ -27,7 +27,7 @@ const Login = (props) => {
         <View style={{ ...styles.Buttom2, ...styles.sombra }}>
           {/*debe de ir a un costado el logo de google */}
           <Image
-            source={require("./../image/icons/google.png")}
+            source={require("./../../image/icons/google.png")}
             style={{ width: 30, height: 30 }}
           />
           <View style={{ flexdirection: "column" }}>

@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, ImageBackground } from "react-native";
-import styles from "../Styles/styles";
+import { View, Text, ImageBackground,Button } from "react-native";
+import styles from "./../../Styles/styles";
 
 const image = {
   uri: "http://dtai.uteq.edu.mx/~luivid195/AWI4.0/HuertoInteligente/image/Inicio-image.jpg",
@@ -19,6 +19,14 @@ const Inicio = (props) => {
         >
           <View style={{ ...styles.tarjetainicio }}>
             <Text style={styles.text}>Huerto Inteligente</Text>
+          </View>
+          <View>
+          <Button 
+
+          title=" comenzar"
+
+          />
+
           </View>
         </View>
       </ImageBackground>
