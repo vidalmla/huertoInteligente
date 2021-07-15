@@ -94,7 +94,65 @@ const styles = StyleSheet.create({
         marginVertical: 25,
         marginHorizontal: 15,
     },
+//---------------------------Dasboarht---------------------------------
+    Dasboardcontainer: {
+    flex: 1,
 
+    },
+    Dasboardslider: {
+        flex: 0.80,
+        flexDirection: "row",
+        
+    },
+
+    Dasboardslider2: {
+    flex:1.5,
+    flexDirection: "column",
+    },
+
+    Dasboardslider3: {
+    flex:1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 30
+    },
+
+    textHeaderUser: {
+        fontSize: 20,
+        fontStyle: "normal",
+        justifyContent: "center",
+    },
+    Dasboardfooter: {
+    flex: 3.8,
+    justifyContent: "center",
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    //borderBottomEndRadius:75
+    
+    },
+    Dasboardimage: {
+    flex: 1,
+    resizeMode: "center",
+    },
+//---------------------------Dasboarh Contenido---------------------------------
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
 });
 
 export default styles;

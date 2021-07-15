@@ -6,10 +6,8 @@ const Cuenta = () =>
 {
     return (
         <View style={styles.container}>
-            <Text>
-                pagina de cuenta
-            </Text>
-
+            
+            
         </View>
     );
 };

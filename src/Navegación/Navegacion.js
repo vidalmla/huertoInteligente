@@ -1,20 +1,17 @@
 import React from 'react';
-import { View,Text,Image } from 'react-native';
+import { View,Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //estilo
 import styles from './../Styles/styles';
+//Navegación
+import drawerNavegacion from './../Navegación/drawerNavegacion';
 //pantallas
-import Notificaciones from './../screens/Private/Notificaciones';
-import Sensores from './../screens/Private/Sensores';
 import Dasboard from './../screens/Private/Dasboard';
 import Cuenta from './../screens/Private/Cuenta';
-import misPlantas from './../screens/Private/misPlantas';
 //iconos
-import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { Foundation } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -33,18 +30,7 @@ const Navigation = (props) =>
                 }
              }}
             >
-            <Tab.Screen name="Notificaciones" component={Notificaciones}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabnav}>
-                            <Ionicons
-                                name="notifications-circle-outline"
-                                size={50}
-                                color="#536162" />
-                        </View>
-                    ),
-                }}
-            />
+            
            
             <Tab.Screen name="Dasboard" component={Dasboard}
                 options={{
@@ -68,7 +54,7 @@ const Navigation = (props) =>
            
             <Tab.Screen name="Cuenta" component={Cuenta}
                 options={{
-                    tabBarIcon: ({ focused }) => (
+                    tabBarIcon: () => (
                         <View style={styles.tabnav}>
                             <FontAwesome5
                                 name="user-circle"
@@ -79,7 +65,18 @@ const Navigation = (props) =>
                     ),
                 }}
             />
-            
+            <Tab.Screen name="drawerNavegacion" component={drawerNavegacion}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View style={styles.tabnav}>
+                            <SimpleLineIcons
+                                name="options"
+                                size={50}
+                                color="#536162"/>
+                        </View>
+                    ),
+                }}
+            />
                 
       </Tab.Navigator>
     );

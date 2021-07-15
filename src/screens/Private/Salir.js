@@ -2,16 +2,16 @@ import React from "react";
 import { Text, View } from "react-native";
 import styles from "./../../Styles/styles";
 
-const misPlantas = () =>
+const Salir = () =>
 {
     return (
         <View style={styles.container}>
         <Text>
-            pagina de Plantas
+            pagina de Salir
         </Text>
 
     </View>
     );
 };
 
-export default misPlantas;
+export default Salir;

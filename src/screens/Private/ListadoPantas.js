@@ -7,7 +7,7 @@ const misPlantas = () =>
     return (
         <View style={styles.container}>
         <Text>
-            pagina de Plantas
+            pagina de Listado de plantas
         </Text>
 
     </View>
