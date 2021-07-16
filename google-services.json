@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "819049979924",
+    "project_id": "huertoint",
+    "storage_bucket": "huertoint.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819049979924:android:92e6d728c635086bf20701",
+        "android_client_info": {
+          "package_name": "com.starindustries.agriculturainteligente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819049979924-jnjop303q21rsj8jt47n78knk81t8v7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.starindustries.agriculturainteligente",
+            "certificate_hash": "30881f4acfa5e5a475a9e2e1e6151d5708bcd97d"
+          }
+        },
+        {
+          "client_id": "819049979924-dsb6ecf5l8ccfuql150886pddaccopf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKjreop-xOq4TKzw9ul4Sukb3iFn_CqXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819049979924-dsb6ecf5l8ccfuql150886pddaccopf5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "819049979924-mdmijfnanr8d33cog6olpis36q9v28ut.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.starindustries.agriculturainteligente"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
