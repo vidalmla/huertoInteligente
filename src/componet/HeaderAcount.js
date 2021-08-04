@@ -4,19 +4,23 @@ import { Avatar, HStack,Heading,VStack} from "native-base"
 import { extendTheme, NativeBaseProvider } from "native-base";
 import styles from "../Styles/styles";
 
+import firebase from './../backend/firebase';
+
+
+import { Feather } from '@expo/vector-icons';
 const theme = extendTheme({
     components: {
         Avatar: {
-            baseStyle: {},
-            defaultProps: {},
-            variants: {},
-            sizes: {},
-    },
-      Text: {
         baseStyle: {},
         defaultProps: {},
         variants: {},
         sizes: {},
+    },
+      Text: {
+      baseStyle: {},
+      defaultProps: {},
+      variants: {},
+      sizes: {},
     }
     } 
 });
@@ -26,20 +30,34 @@ export const HeaderAcount = () => {
   return (
     <View style={{...styles.Dasboardslider}}>
       <View style={styles.Dasboardslider2}>
-      {/*Nombre del usuario */}
+      {/*Nombre del usuario  */}
         
       
         
       <NativeBaseProvider theme={theme}>
-        <VStack space={2} alignItems="center"width="100%">
-            <Heading
-              mt={20}
-              size="xl"
-              color="white"
-            >
-  {/*Aqui poner el nombre que viene de la cuenta de google*/}
-           Monica Bustos
-          </Heading>
+        <VStack space={2}>
+            
+            <Heading mt={4} size="xl" color="white" >
+              {/*Aqui poner el nombre que viene de la cuenta de google*/}
+              <Text>{firebase.auth.currentUser.displayName}</Text> 
+            </Heading>
+            <Heading mt={-2} size="lg" color="white" >
+            <Text>
+              {firebase.auth.currentUser.emailVerified
+                ?
+                (<Text >
+                 <Feather name="check-circle"  size={25} color="seagreen" />
+                 {` `}Cuenta verificada
+                </Text>):
+              (<Text>
+                <Feather name="x-circle" size={24} color="indianred" />
+                {` `}Cuenta no verificada
+                
+                </Text>)
+              
+              }
+            </Text>
+            </Heading>
         </VStack>
       </NativeBaseProvider>
 
@@ -47,16 +65,16 @@ export const HeaderAcount = () => {
       <View style={styles.Dasboardslider3}>
         {/*imagen del usuario */}
         <NativeBaseProvider theme={theme}>
-          <HStack>
-            <Avatar
-              size="xl"
-              source={{
-                uri: "https://demo.nparoco.com/Vuexy/app-assets/images/profile/user-uploads/user-11.jpg",
-              }}
-              >
-              User
-            </Avatar>
-            </HStack>
+          <HStack mt={-5}>
+          <Avatar
+            size={"xl"}
+            source={{
+              uri:"https://firebasestorage.googleapis.com/v0/b/huertoint.appspot.com/o/Avatar%2Fpexels-meijii-1638408%20(1).jpg?alt=media&token=7bb0bae8-0eeb-4964-ac6c-cd8aece3b496"
+            }}
+            >
+            User foto
+          </Avatar>
+          </HStack>
           </NativeBaseProvider>
         </View>
     </View>

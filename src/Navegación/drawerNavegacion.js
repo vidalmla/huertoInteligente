@@ -11,19 +11,31 @@ import Salir from './../screens/Private/Salir';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+
+//firebase
+import firebase from './../backend/firebase';
+
+import Sidebar from './../componet/Sidebar';
+
 //drawer
 const Drawer = createDrawerNavigator();
 
-const drawerNavegacion = () =>
+
+const drawerNavegacion = (props) =>
 {
+
+
+
+    
+
     return (
         <Drawer.Navigator
-        initialRouteName="inicio"
-        drawerContentOptions={{
-            activeTintColor: '#206A5D',
-            itemStyle: { marginVertical: 20 },
+            initialRouteName="inicio"
+            drawerContentOptions={{
+                activeTintColor: '#206A5D',
+                itemStyle: { marginVertical: 20 },
             }}
+            drawerContent={() => <Sidebar {...props}/>}
         >
         <Drawer.Screen
         
@@ -69,18 +81,28 @@ const drawerNavegacion = () =>
             ),
             }}
         />    
-        <Drawer.Screen
-        name="Salir"
-        component={Salir}
-        options={{drawerLabel: 'Salir' ,
-        drawerIcon: ({ focused, size }) => (
-            <Ionicons
-                name="exit-outline"
-                size={30}
-                color={focused ? '#7cc' : '#ccc'}
-            />
-        ),
-          }}    
+            <Drawer.Screen
+                name='Salir'
+                component={Salir}
+                options={{
+                    
+                    drawerIcon: ({ focused, size }) => (
+                        <Ionicons
+                            name="exit-outline"
+                            size={30}
+                            color={focused ? '#7cc' : '#ccc'}
+                        />
+                    ),
+                }}
+                onPress={async () =>
+                {
+                    await firebase.auth.signOut();
+                    props.navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'Login' }],
+                    });
+                    props.navigation.navigate('Login');
+                }}
         />
         
     </Drawer.Navigator>   

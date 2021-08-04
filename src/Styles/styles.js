@@ -15,18 +15,13 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        resizeMode: "cover",
         justifyContent: "center"
     },
     text: {
-        bottom: 0,
-        color: '#000',
-        fontSize: 35,
-        borderColor: '#fff',
-        borderWidth: 2,
-        padding: 20,
-        borderRadius: 0,
-        backgroundColor: '#fff'
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: '#fff',
+        
     },
     sombra:{
         shadowColor: "#7F5FF0",
@@ -65,11 +60,11 @@ const styles = StyleSheet.create({
         borderColor: '#fff',
         borderWidth: 10,
         padding: 20,
-        borderRadius: 0,
+        borderRadius: 10,
         bottom: 0,
     },
     Buttom1: {
-        backgroundColor: '#CDC733',
+        backgroundColor: '#5C821A',
         height: 70,
         marginHorizontal: 10,
         marginVertical:10,
@@ -78,7 +73,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     Buttom2: {
-        backgroundColor: '#fff',
+        backgroundColor: '#FFF',
         height: 70,
         marginHorizontal: 10,
         marginVertical:15,
@@ -97,10 +92,10 @@ const styles = StyleSheet.create({
 //---------------------------Dasboarht---------------------------------
     Dasboardcontainer: {
     flex: 1,
-
+        
     },
     Dasboardslider: {
-        flex: 0.80,
+        flex: 0.2,
         flexDirection: "row",
         
     },
@@ -108,10 +103,11 @@ const styles = StyleSheet.create({
     Dasboardslider2: {
     flex:1.5,
     flexDirection: "column",
+    marginHorizontal:15
     },
 
     Dasboardslider3: {
-    flex:1,
+    flex:0.8,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -124,8 +120,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     Dasboardfooter: {
-    flex: 3.8,
-    justifyContent: "center",
+    flex: 1,
+    marginVertical: 0,
     backgroundColor: "#fff",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
@@ -134,13 +130,60 @@ const styles = StyleSheet.create({
     },
     Dasboardimage: {
     flex: 1,
-    resizeMode: "center",
+    resizeMode: "cover",
     },
-//---------------------------Dasboarh Contenido---------------------------------
-    
-    
-    
-
+//---------------------------Registro---------------------------------
+    inicioRe: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+    },
+    contReg: {
+        flex: 2,
+        marginVertical:50,
+        marginHorizontal: 20,
+        backgroundColor: "#fff",
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+        borderBottomLeftRadius: 40,
+        borderBottomRightRadius:40
+        
+    },
+    imagenRE: {
+        flex: 1,
+        height: null,
+        width: null
+    },
+    textcRE: {
+        fontSize: 50,
+        fontWeight: 'bold',
+        color: '#fff',
+    },
+    tarjetaregistro: {
+        borderColor: '#fff',
+        borderWidth: 10,
+        padding: 20,
+        top: 50,
+        borderRadius: 10,
+        marginVertical: 20,
+        marginHorizontal: 25,
+        alignItems: "center",
+    },
+    //-----------------------
+    tarjetadatos: {
+        flex: 0.1,
+        backgroundColor: "#fff",
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+        borderBottomEndRadius: 40,
+        borderBottomLeftRadius: 40,
+        marginHorizontal:10,
+        shadowOpacity: 0.25,
+        shadowRadius: 3.5,
+        elevation: 5,
+        marginTop:0,
+        marginBottom: 90,
+    },
 
 
 

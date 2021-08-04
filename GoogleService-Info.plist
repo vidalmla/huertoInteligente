@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>819049979924-mdmijfnanr8d33cog6olpis36q9v28ut.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.819049979924-mdmijfnanr8d33cog6olpis36q9v28ut</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>819049979924-jnjop303q21rsj8jt47n78knk81t8v7n.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDo4ko1d5WLF4LWMo4KUVNh3lHB0iQ1S_8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>819049979924</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.starindustries.agriculturainteligente</string>
+	<key>PROJECT_ID</key>
+	<string>huertoint</string>
+	<key>STORAGE_BUCKET</key>
+	<string>huertoint.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:819049979924:ios:363ba5af253bc9a6f20701</string>
+</dict>
+</plist>

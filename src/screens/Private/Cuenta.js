@@ -6,7 +6,7 @@ const Cuenta = () =>
 {
     return (
         <View style={styles.container}>
-            
+            <Text>Cuenta.js</Text>
             
         </View>
     );
