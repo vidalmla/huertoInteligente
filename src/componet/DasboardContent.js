@@ -8,9 +8,6 @@ import styles from "./../Styles/styles";
 //manejo de la graficas
 import { WebView } from 'react-native-webview';
 
-
-
-
 const DasboarContent = (Props) =>
 {
     //constantes
@@ -83,33 +80,56 @@ const DasboarContent = (Props) =>
                 
         style={styles.Dasboardfooter}
         contentContainerStyle={{
-            flexGrow: 1,
-            marginVertical:10
-        }}>
-            <WebView
+            flexGrow:1,
+            position:'relative'
+            }}>
             
+            {/*<View style={{flex:1}}>
+            <WebView
             scrollEnabled={true}
-            source={{ uri : `https://laptopfix.com.mx/demo-grafica-rtdb/grafica.php?id=${firebase.auth.currentUser.uid}` }}
+            source={{ uri : `http://dtai.uteq.edu.mx/~luivid195/AWI4.0/graficas/graficaproyecto/panel_control.php?id=${firebase.auth.currentUser.uid}` }}
             style={{
-                flex: 1,
-                top: 20,
-                marginHorizontal: 10,
-               
-            }}
-        />
+            flex: 1,
+            top: 20,
+            marginHorizontal: 10,
+            
+            } />
+            
+                
+            </View>*/}
+           <View style={{flex:1}}>
+                <WebView
+                scrollEnabled={true}
+                source={{ uri : `https://laptopfix.com.mx/demo-grafica-rtdb/grafica.php?id=${firebase.auth.currentUser.uid}` }}
+                style={{
+                    flex: 1,
+                    top: 20,
+                    marginHorizontal: 10,
+                
+                }}
+                />
+                
+            </View>
+            <View style={styles.tarjetadatos}>
+                <Text style={{ ...styles.google, marginHorizontal: 10, top: 13 }}>
+                    {`       `}Datos del Huerto Inteligente
+                    {`\n`}
+                    {`\n`}Temperatura .............................. {temperatura}°C
+                    {`\n`}Humedad ....................................{humedad}%
+                    {`\n`}Luz .............................................{luz}%
+                    {`\n`}Agua .......................................... {agua}%
+                    {`\n`}suelo ...........................................{suelo}%
+                </Text>
+            </View>
+                
+                
 
-        <View style={styles.tarjetadatos}>
-            <Text style={{ ...styles.google, marginHorizontal: 10, top: 13 }}>
-                {`       `}Datos del Huerto Inteligente
-                {`\n`}
-                {`\n`}Temperatura .............................. {temperatura}°C
-                {`\n`}Humedad ....................................{humedad}%
-                {`\n`}Luz .............................................{luz}%
-                {`\n`}Agua .......................................... {agua}%
-                {`\n`}suelo ...........................................{suelo}%
-            </Text>
-        </View>
-    
+
+
+
+
+
+       
     </ScrollView>
     );
 }

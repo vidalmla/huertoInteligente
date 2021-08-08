@@ -34,7 +34,7 @@ const Registro = (props) =>
     
 	const [verPass, setVerPass] = useState('eye-off');
 	const [cargando, setCargando] = useState(false);
-
+    
 	const [formData, setFormData] = useState({
 		email: 'vidalcutiti@gmail.com',
 		pass: '123456',
@@ -70,10 +70,29 @@ const Registro = (props) =>
             //se aggra la foto por defecto al usuario
             await nuevoUsuario.user.updateProfile({
                 displayName: formData.nombre,
-                photoURL: 'https://firebasestorage.googleapis.com/v0/b/huertoint.appspot.com/o/Avatar%2Fplantas.jpeg?alt=media&token=8ff19263-cb8d-4b69-8354-d35fe92c4d85'
+                photoURL: 'https://firebasestorage.googleapis.com/v0/b/huertoint.appspot.com/o/Avatar%2Fplanta.png?alt=media&token=486d61e3-32d0-4ce2-97ae-6643541ae250'
             })
 
             await nuevoUsuario.user.sendEmailVerification();
+            //registro en el realtime
+
+            firebase.realtime.ref(`/sensores/${nuevoUsuario.user.uid}`).
+            update({
+                agua: 0,
+                humedad: 0,
+                luz: 0,
+                suelo: 0,
+                temperatura: 0,
+                modulo: "nulo"
+            }).then (()=>console.log('actualizado con exito'))
+            //crear el data del arrego de data
+            
+            
+            
+
+
+
+
 
 			setCargando(false);
 		} catch (e) {
@@ -89,7 +108,7 @@ const Registro = (props) =>
     //para ignorar el tiempo
     LogBox.ignoreLogs(['Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.']); // Ignore log notification by message
     LogBox.ignoreAllLogs();//Ignore all log notifications
-
+    
     
     
 
@@ -135,7 +154,7 @@ const Registro = (props) =>
                 />
 
                 <TextInput
-                    keyboardType='email-address'
+                    keyboardType='email'
                     maxLength={70}
                     autoCapitalize='none'
                     autoCorrect={false}
@@ -224,10 +243,10 @@ const Registro = (props) =>
                         top:50,
                     }}>
                         <Button
-                            title='Registrarme'
-                            color='tomato'
-                            onPress={registrarUsuario}
-                            />
+                        title='Registrarme'
+                        color='tomato'
+                        onPress={registrarUsuario}
+                        />  
                         
                             
                     </View>

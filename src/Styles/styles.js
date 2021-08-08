@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
         height: 70,
         marginVertical: 25,
         marginHorizontal: 15,
+        padding:5,
     },
 //---------------------------Dasboarht---------------------------------
     Dasboardcontainer: {

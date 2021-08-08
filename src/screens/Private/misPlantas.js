@@ -1,19 +1,56 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import
 {
     View,
     Text,
-    ScrollView,
+    FlatList,
     ImageBackground,
 } from 'react-native';
 
-
+//stilos
 import styles from './../../Styles/styles';
+//backend
+import firebase from './../../backend/firebase';
+//importamos item de mis plantas
+import MisplantasItem from '../../componet/MisplantasItem';
 
-//imagen de fondo bonito
+//imagen de fondo bonito :)
 const image = { uri: "http://dtai.uteq.edu.mx/~luivid195/AWI4.0/HuertoInteligente/image/maceta.jpg" };
+
+
+
 const misPlantas = (props) =>
 {
+ 
+    const [misplantas, setmisplantas] = useState(" ");
+    
+    const getmisplantas = async() =>
+    {
+
+        await firebase.database.
+        collection('cultivos')
+        .where(`${firebase.auth.currentUser.uid}.user`,'==', `${firebase.auth.currentUser.uid}`)
+        .get()
+        .then((querySnapshot) =>{
+            if (querySnapshot.size > 0) {
+
+                const arrmisplantas = [];
+                querySnapshot.forEach((doc) => {
+                    
+                    arrmisplantas.push({
+                        ...doc.data()
+                    })
+                    setmisplantas(arrmisplantas);
+                    console.log(arrmisplantas);
+    
+                });
+            }
+        }); 
+    }
+
+    useEffect(() => {
+        getmisplantas();
+    },[])
     return (
 
         <ImageBackground source={image} resizeMode="cover" style={styles.Dasboardimage}>
@@ -24,7 +61,7 @@ const misPlantas = (props) =>
                     alignContent:"center",
                     }}>
 
-                    <Text style={styles.text}>title</Text>
+                    <Text style={styles.text}>Mis Plantas</Text>
 
                     </View>
                 </View>
@@ -34,25 +71,19 @@ const misPlantas = (props) =>
                     borderTopLeftRadius: 40,
                     borderTopRightRadius: 40,
                 }}>
-                <ScrollView>
-                    
-                    
-                    <Text
-                        style={{
-                            
-                            flex: 1,
-                            marginHorizontal: 11,
-                            fontSize: 18,
-                            justifyContent:"center",
-                            ...styles.google
-                        }}>
+                <FlatList
+                    syle={{ top: 9 }}
+                    data={misplantas}
+                    keyExtractor={item => item.id}
+
+                    renderItem={(item) => (
+                        <MisplantasItem
+                            item={item.item}
+                            navigation={props.navigation}
                         
-                        infor
-                        {`\n`}
-                        
-                    </Text>
-                    
-                </ScrollView>
+                        />
+                    )}
+                />
                 </View>
         </ImageBackground>
         

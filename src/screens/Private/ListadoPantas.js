@@ -105,9 +105,7 @@ const ListadoPantas = (props) =>
                     />
                     {/*espaciador de abajo del flatlist*/}
                     <View style={{margin:50}}/>
-
                 </View>
-                
             </View>
         </ImageBackground>
 

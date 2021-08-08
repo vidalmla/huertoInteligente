@@ -69,7 +69,7 @@ export const HeaderAcount = () => {
           <Avatar
             size={"xl"}
             source={{
-              uri:"https://firebasestorage.googleapis.com/v0/b/huertoint.appspot.com/o/Avatar%2Fpexels-meijii-1638408%20(1).jpg?alt=media&token=7bb0bae8-0eeb-4964-ac6c-cd8aece3b496"
+              uri: firebase.auth.currentUser.photoURL
             }}
             >
             User foto

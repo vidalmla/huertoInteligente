@@ -23,25 +23,25 @@ const Navigation = (props) =>
 useLayoutEffect(() => {
     
     props.navigation.setOptions({
-        headerLeft: () => (
-            <TouchableNativeFeedback
-                onPress={() => props.navigation.dispatch(
-                    DrawerActions.toggleDrawer()
-                ) }
-            >
-                <SimpleLineIcons
-                    name="menu"
-                    size={25}
-                    color="black"
-                    style={{
-                        top:4,
-                        paddingVertical: 5,
-                        paddingLeft: 10,
-                        paddingRight:20,
-                    }}
-                />
-            </TouchableNativeFeedback>
-        ),
+    headerLeft: () => (
+        <TouchableNativeFeedback
+            onPress={() => props.navigation.dispatch(
+                DrawerActions.toggleDrawer()
+            ) }
+        >
+            <SimpleLineIcons
+                name="menu"
+                size={25}
+                color="black"
+                style={{
+                    top:4,
+                    paddingVertical: 5,
+                    paddingLeft: 10,
+                    paddingRight:20,
+                }}
+            />
+        </TouchableNativeFeedback>
+    ),
     })
 }, []);
     

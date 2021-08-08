@@ -19,9 +19,7 @@ const Sidebar = (props) =>
 {
 	return (
 		<View style= {{flex:1}}>
-			<DrawerContentScrollView {...props}
-			
-			>
+			<DrawerContentScrollView {...props}>
 				<Text
 				style={{
 					marginLeft: 20,
@@ -78,7 +76,7 @@ const Sidebar = (props) =>
                 color={focused ? '#7cc' : '#ccc'}
                 />
 				)}
-				label='Información'
+				label='Mis Plantas'
 				onPress={() =>
 					props.navigation.navigate('Mis Plantas')}
 				/>
@@ -94,13 +92,14 @@ const Sidebar = (props) =>
 				onPress={async () =>{
 					//funcion para cerrar la sesion
 					await firebase.auth.signOut();
-					//se borra el historial
-					props.navigation.navigate('inicio');
+					
 					//formateamos el historial para IOS en android jala chido
-					props.navigate.reset({
+					props.navigation.reset({
 						index: 0,
 						routes: [{ name: 'inicio' }],
 					});
+					//se borra el historial
+					props.navigation.navigate('inicio');
 
 				}}	
 				/>

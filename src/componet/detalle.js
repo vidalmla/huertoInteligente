@@ -7,8 +7,6 @@ import
         ImageBackground,
         Image
 } from 'react-native';
-import { style } from 'styled-system';
-
 import styles from './../Styles/styles';
 
 //imagen de fondo bonito

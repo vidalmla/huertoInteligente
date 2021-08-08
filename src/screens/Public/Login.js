@@ -2,7 +2,6 @@ import React ,{useState,useLayoutEffect}from 'react';
 import
     {
         ActivityIndicator,
-        Button,
         Alert,
         ImageBackground,
         Text,
@@ -17,10 +16,6 @@ import { Feather } from '@expo/vector-icons';
 import firebase from './../../backend/firebase';
 //para el mensaje de tiempo que molesta
 import { LogBox } from 'react-native';
-
-
-
-
 //imagen de fondo
 const imagen = {
     uri: "http://dtai.uteq.edu.mx/~luivid195/AWI4.0/HuertoInteligente/image/pexels-kate-graur-5425692.jpg",

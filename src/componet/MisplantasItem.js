@@ -1,16 +1,9 @@
 import React from "react";
-import
-    {
-        Text,
-        View,
-        Image,
-        TouchableOpacity
-} from "react-native";
-    //iconos
+import { Image, Text, TouchableOpacity, View } from "react-native";
+//iconos
 import { Entypo } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-
+//natibase
 import {Heading,VStack} from "native-base"
 import { extendTheme, NativeBaseProvider } from "native-base";
 const theme = extendTheme({
@@ -29,8 +22,7 @@ const theme = extendTheme({
     }
     } 
 });
-
-const TarjetaItem = (props) =>
+const MisplantasItem = (props) =>
 {
     return (
         
@@ -139,8 +131,7 @@ const TarjetaItem = (props) =>
                 
                 </View>
         </View>
-    )
+     );
 }
-
-
-export default TarjetaItem;
+ 
+export default MisplantasItem;
