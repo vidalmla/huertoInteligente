@@ -55,7 +55,15 @@ const iniciarSesion = async() => {
             mensajeVienvenido,
             [{
                 text: 'Acceder',
-                onPress: () => props.navigation.navigate('Navegacion')
+                onPress: () =>
+                {
+                    setFormData({
+                        email: '',
+                        pass: '',
+                                
+                    });
+                    props.navigation.navigate('Navegacion')
+                },
             },],{cancelable: false}
         );
         

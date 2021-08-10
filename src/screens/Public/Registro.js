@@ -34,11 +34,11 @@ const Registro = (props) =>
     
 	const [verPass, setVerPass] = useState('eye-off');
 	const [cargando, setCargando] = useState(false);
-    
+    const [logitud, setlonguitud] = useState('');
 	const [formData, setFormData] = useState({
-		email: 'vidalcutiti@gmail.com',
-		pass: '123456',
-		nombre: 'luis Angel Vidal',
+		email: '',
+		pass: '',
+		nombre: '',
 	});
 
 	const registrarUsuario = async () => {
@@ -63,7 +63,17 @@ const Registro = (props) =>
                 [
                     {
                         text: 'Entendido',
-                        onPress:() => props.navigation.navigate('Login'),
+                        onPress: () =>
+                        //antes del props seteamos la parte del tex input y jala  solo observa 
+                        //la linea 67 a la 76
+                        {
+                            setFormData({
+                                email: '',
+                                pass: '',
+                                nombre: '',
+                            });
+                            props.navigation.navigate('Login')
+                        },
                     },
                 ]
             );
@@ -86,21 +96,24 @@ const Registro = (props) =>
                 modulo: "nulo"
             }).then (()=>console.log('actualizado con exito'))
             //crear el data del arrego de data
+            //crear el isner de datos
+            await firebase.realtime.ref('/datos/logitud/').on('value').then((snapShot) =>
+            {
+                if (snapShot.exists) {
+                    realtime.ref('datos').set({
+                        'longitud': snapShot.val() + 1
+                    });
+                }
+            });
             
-            
-            
-
-
-
-
-
-			setCargando(false);
+            setCargando(false);
 		} catch (e) {
 			setCargando(false);
             console.log(JSON.stringify(e));
             Alert.alert('ERROR', errores_mx(e.code));
             
-		}
+        }
+
 	};
     const imagen = {
         uri: "http://dtai.uteq.edu.mx/~luivid195/AWI4.0/HuertoInteligente/image/pexels-kate-graur-5425692.jpg",
@@ -154,7 +167,7 @@ const Registro = (props) =>
                 />
 
                 <TextInput
-                    keyboardType='email'
+                    keyboardType='email-address'
                     maxLength={70}
                     autoCapitalize='none'
                     autoCorrect={false}
@@ -185,8 +198,7 @@ const Registro = (props) =>
                 style={{
                     flex: 1,
                     alignItems: 'center',
-                    width: '100%',
-                    position: 'relative',
+                    width: '100%', position: 'relative',
                 }}>
                     <Feather
                         name={verPass}

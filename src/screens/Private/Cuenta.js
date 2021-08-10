@@ -10,8 +10,6 @@ import
         Button,
         ActivityIndicator
     } from 'react-native';
-import styles from "./../../Styles/styles";
-import { alignItems, opacity, paddingBottom } from 'styled-system';
 //
 import firebase from './../../backend/firebase';
 
@@ -214,7 +212,7 @@ const Cuenta = () =>
                     }
                 />    
                 <TextInput
-                    keyboardType='email'
+                    keyboardType='email-address'
                     maxLength={70}
                     autoCapitalize='none'
                     autoCorrect={false}
@@ -312,13 +310,18 @@ const Cuenta = () =>
                                     });
 
                                     //actualizamos los datos del usuario
-
-                                    firebase.auth.currentUser.updateProfile({
-                                        displayName: formData.nombre,
-                                        photoURL: formData.avatar
+                                    //poner un await en la linea 316
+                                    await firebase.auth.currentUser.updateProfile({
+                                        displayName:
+                                            formData.nombre,
+                                        photoURL:
+                                            await subidaArchivo.ref.getDownloadURL()
+                                        
                                     })
 
                                     setCargando(false);
+                                    setFormData({ ...formData, ['avatarNuevo']: false });
+                                    console.log(photoURL);
                                     Alert.alert('Datos Actualizados');
                                 }
                             }else {

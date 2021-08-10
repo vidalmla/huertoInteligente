@@ -93,7 +93,7 @@ const DasboarContent = (Props) =>
             top: 20,
             marginHorizontal: 10,
             
-            } />
+            } }/>
             
                 
             </View>*/}

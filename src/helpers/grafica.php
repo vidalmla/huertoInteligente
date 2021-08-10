@@ -72,13 +72,13 @@
             messagingSenderId: "819049979924",
             appId: "1:819049979924:web:3fddbb8a09d659a8f20701"
         };
-    // Initialize Firebase
+
     firebase.initializeApp(firebaseConfig);
 
     var realtime = firebase.database();
     
 
-    /**Porcentajes*/
+
     realtime.ref("sensores/<?=$_GET['id']?>")                             
     .on('value', function(snap) { 
 
@@ -87,7 +87,7 @@
         var luz     = snap.val().luz;
         var humedad = snap.val().humedad;
 
-        /**GRÁFICA PROCENTAJES*/
+
         Highcharts.chart({
 
             chart: {
