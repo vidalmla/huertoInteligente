@@ -119,10 +119,7 @@ const MisplantasItem = (props) =>
                                 flex: 1,
                                 fontSize:18,
                             }}>
-                            <MaterialCommunityIcons
-                                name="lightbulb-on"
-                                size={18}
-                                color="black" />
+                            
                             Como comenzar
                             </Text>
                         </View>

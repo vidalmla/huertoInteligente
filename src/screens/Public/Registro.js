@@ -8,7 +8,6 @@ import {
     TextInput,
     Text,
 	View,
-    SnapshotViewIOS,
 } from 'react-native';
 //icono del ojo
 import { Feather } from '@expo/vector-icons';
@@ -35,7 +34,12 @@ const Registro = (props) =>
     
 	const [verPass, setVerPass] = useState('eye-off');
 	const [cargando, setCargando] = useState(false);
-    
+    const [logitud, setlonguitud] = useState('');
+	const [formData, setFormData] = useState({
+		email: '',
+		pass: '',
+		nombre: '',
+	});
 	
 
 	const registrarUsuario = async () => {
@@ -110,12 +114,6 @@ const Registro = (props) =>
                     console.log('urra2');
 
                 });
-
-
-           
-           
-                
-            
             //registro en el realtime
             setCargando(false);
 		} catch (e) {

@@ -28,7 +28,7 @@ const Login_inicio = (props) =>
           }}
         >
           <View style={{ ...styles.tarjetainicio }}>
-            <Text style={styles.text}>Huerto Inteligente</Text>
+            <Text style={styles.text}>Agricultura Inteligente</Text>
           </View>
           <View style={{
             

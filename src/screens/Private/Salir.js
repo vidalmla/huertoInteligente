@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import styles from "./../../Styles/styles";
 
-const Salir = () =>
+const Salir = (props) =>
 {
     return (
         <View style={styles.container}>
