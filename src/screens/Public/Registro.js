@@ -8,6 +8,7 @@ import {
     TextInput,
     Text,
 	View,
+    SnapshotViewIOS,
 } from 'react-native';
 //icono del ojo
 import { Feather } from '@expo/vector-icons';
@@ -34,12 +35,8 @@ const Registro = (props) =>
     
 	const [verPass, setVerPass] = useState('eye-off');
 	const [cargando, setCargando] = useState(false);
-    const [logitud, setlonguitud] = useState('');
-	const [formData, setFormData] = useState({
-		email: '',
-		pass: '',
-		nombre: '',
-	});
+    
+	
 
 	const registrarUsuario = async () => {
 		setCargando(true);
@@ -84,28 +81,42 @@ const Registro = (props) =>
             })
 
             await nuevoUsuario.user.sendEmailVerification();
+            
             //registro en el realtime
-
             firebase.realtime.ref(`/sensores/${nuevoUsuario.user.uid}`).
-            update({
+            set({
                 agua: 0,
                 humedad: 0,
                 luz: 0,
                 suelo: 0,
                 temperatura: 0,
                 modulo: "nulo"
-            }).then (()=>console.log('actualizado con exito'))
-            //crear el data del arrego de data
-            //crear el isner de datos
-            await firebase.realtime.ref('/datos/logitud/').on('value').then((snapShot) =>
-            {
-                if (snapShot.exists) {
-                    realtime.ref('datos').set({
-                        'longitud': snapShot.val() + 1
-                    });
-                }
             });
+            console.log('llegaste hasta aqui');
+
+            firebase.realtime.ref('/datos/longitud')
+                .once('value').
+                then((snapshot) =>
+                {
+                    console.log(snapshot);
+                    firebase.realtime.ref('datos')
+                    .set({
+                        "longitud" : snapshot.val() + 1
+                    });
+                    console.log('urra');
+                    firebase.realtime.ref("usuarios").update({
+                        [snapshot.val()]: nuevoUsuario.user.uid
+                    });
+                    console.log('urra2');
+
+                });
+
+
+           
+           
+                
             
+            //registro en el realtime
             setCargando(false);
 		} catch (e) {
 			setCargando(false);

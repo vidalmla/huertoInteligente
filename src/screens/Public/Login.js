@@ -36,12 +36,13 @@ const iniciarSesion = async() => {
     setCargando(true);
     try {
         const usuario = await firebase.auth.signInWithEmailAndPassword(
-            formData.email, formData.pass
+            formData.email,
+            formData.pass
         );
         
         //verifico si esta validado de
 
-        let mensajeVienvenido = `Hola ${usuario.user.email}`
+        let mensajeVienvenido = `Hola ${firebase.auth.currentUser.displayName}`
         if (!usuario.user.emailVerified) {
             `Bienvenido ,`,
                 mensajeVienvenido += ' favor de verificar tu cuenta para acceder',
@@ -75,7 +76,7 @@ const iniciarSesion = async() => {
     }
 }
 const [formData, setFormData] = useState({
-email: 'vidalcutiti@gmail.com',
+email: 'jn37noe@gmail.com',
 pass: '123456',
 		
 });
