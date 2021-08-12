@@ -76,7 +76,7 @@ const iniciarSesion = async() => {
     }
 }
 const [formData, setFormData] = useState({
-email: 'jn37noe@gmail.com',
+email: 'vidalcutiti@gmail.com',
 pass: '123456',
 		
 });

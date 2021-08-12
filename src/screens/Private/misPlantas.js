@@ -19,7 +19,7 @@ const image = { uri: "http://dtai.uteq.edu.mx/~luivid195/AWI4.0/HuertoInteligent
 
 
 
-const misPlantas = () =>
+const misPlantas = (props) =>
 {
  
     const [misplantas, setmisplantas] = useState(" ");
