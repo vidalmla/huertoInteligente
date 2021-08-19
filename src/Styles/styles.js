@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         // no esta instalada la font
         fontFamily :"script-mt-bold",
-        left: 10,
-        right: 10,
+        left: 5,
+        right: 5,
     },
     tabtext: {
         color:"#564A4A",
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         height: 70,
         marginVertical: 25,
-        marginHorizontal: 15,
+        marginHorizontal: 40,
         padding:5,
     },
 //---------------------------Dasboarht---------------------------------
