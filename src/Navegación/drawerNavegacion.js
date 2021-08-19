@@ -5,17 +5,21 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import ListadoPantas from './../screens/Private/ListadoPantas';
 import misPlantas from './../screens/Private/misPlantas';
 import Notificaciones from './../screens/Private/Notificaciones';
+import Categoria from '../screens/Private/Categorias';
+import Ventas from '../screens/Private/Ventas';
 
 import Salir from './../screens/Private/Salir';
 //icons
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 //firebase
 import firebase from './../backend/firebase';
 
 import Sidebar from './../componet/Sidebar';
+import Sensores from '../screens/Private/Sensores';
 
 //drawer
 const Drawer = createDrawerNavigator();
@@ -81,6 +85,51 @@ const drawerNavegacion = (props) =>
             ),
             }}
         />    
+
+        <Drawer.Screen 
+            name="Categorias"
+            component={Categoria}
+            options={{
+                drawerLabel: 'Categorias' ,
+                drawerIcon: ({ focused, size }) =>(               
+                <MaterialIcons name="category"
+                size={30}
+                color={focused ? '#7cc' : '#ccc'}
+                />
+            ),
+            }}
+        />
+
+        <Drawer.Screen 
+            name="Ventas"
+            component={Ventas}
+            options={{
+                drawerLabel: 'Ventas' ,
+                drawerIcon: ({ focused, size }) =>(               
+                <FontAwesome5 
+                name="money-check-alt"
+                size={30}
+                color={focused ? '#7cc' : '#ccc'}
+                />
+            ),
+            }}
+        />
+
+        <Drawer.Screen 
+            name="Sensores"
+            component={Sensores}
+            options={{
+                drawerLabel: 'Sensores' ,
+                drawerIcon: ({ focused, size }) =>(               
+                <MaterialCommunityIcons
+                name="lightning-bolt"
+                size={30}
+                color={focused ? '#7cc' : '#ccc'}
+                />
+            ),
+            }}
+        />
+
             <Drawer.Screen
                 name='Salir'
                 component={Salir}

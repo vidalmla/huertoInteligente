@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import { DrawerActions} from '@react-navigation/core';
+import { DrawerActions } from '@react-navigation/core';
 import { View,Image,Text, TouchableNativeFeedback } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //estilo
@@ -10,8 +10,9 @@ import drawerNavegacion from './../Navegación/drawerNavegacion';
 import Dasboard from './../screens/Private/Dasboard';
 import Cuenta from './../screens/Private/Cuenta';
 //iconos
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -71,8 +72,8 @@ useLayoutEffect(() => {
                             <Image
                             source={require("../image/icons/dasborad.png")}
                                 style={{
-                                    width: 30,
-                                    height: 30,
+                                    width: 25,
+                                    height: 25,
                                 }}
                             />
                         </View>
@@ -84,9 +85,9 @@ useLayoutEffect(() => {
                 options={{
                     tabBarIcon: () => (
                         <View style={styles.tabnav}>
-                            <FontAwesome5
-                            name="user-circle"
-                            size={45}
+                            <FontAwesome
+                            name="user"
+                            size={35}
                             color="#536162" />
                             
                         </View>
@@ -97,10 +98,10 @@ useLayoutEffect(() => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabnav}>
-                            <SimpleLineIcons
-                                name="options"
-                                size={50}
-                                color="#536162"/>
+                            <Ionicons 
+                                name="notifications" 
+                                size={35} 
+                                color="#536162" />
                         </View>
                     ),
                 }}

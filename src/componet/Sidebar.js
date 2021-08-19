@@ -5,6 +5,8 @@ import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 //firebase
 import firebase from './../backend/firebase';
@@ -79,6 +81,44 @@ const Sidebar = (props) =>
 				label='Mis Plantas'
 				onPress={() =>
 					props.navigation.navigate('Mis Plantas')}
+				/>
+
+				<DrawerItem
+				icon={({ focused }) => (
+				<MaterialIcons name="category"
+                size={30}
+                color={focused ? '#7cc' : '#ccc'}
+                />
+				)}
+				label='Categorias'
+				onPress={() =>
+					props.navigation.navigate('Categorias')}
+				/>
+
+				<DrawerItem
+				icon={({ focused }) => (
+				<FontAwesome5 
+					name='money-check-alt'
+					size={23}
+					color={focused ? '#7cc' : '#ccc'}
+                />
+				)}
+				label='Ventas'
+				onPress={() =>
+					props.navigation.navigate('Ventas')}
+				/>
+
+				<DrawerItem
+				icon={({ focused }) => (
+				<MaterialCommunityIcons
+					name="lightning-bolt"
+					size={30}
+					color={focused ? '#7cc' : '#ccc'}
+                />
+				)}
+				label='Sensores'
+				onPress={() =>
+					props.navigation.navigate('Sensores')}
 				/>
 
 				<DrawerItem
