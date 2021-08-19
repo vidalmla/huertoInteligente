@@ -10,7 +10,10 @@ const errores = (code) =>
 			return 'la contraseña debe de ser mayor a 6 digitos'
 		case 'auth/user-not-found':
 			return 'El correo no existe'
-		
+		case 'auth/network-request-failed':
+			return 'Sin coneción a internet'
+
+			
 	}
 	
 };

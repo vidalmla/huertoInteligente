@@ -20,7 +20,7 @@ import { LogBox } from 'react-native';
 const imagen = {
     uri: "http://dtai.uteq.edu.mx/~luivid195/AWI4.0/HuertoInteligente/image/pexels-kate-graur-5425692.jpg",
 };
-
+import errores_mx from '../../helpers/errores_mx';
  
 const Login = (props) =>
 {
@@ -73,6 +73,7 @@ const iniciarSesion = async() => {
     catch (e) {
         console.log(JSON.stringify(e))
         setCargando(false);
+        Alert.alert('ERROR😟', errores_mx(e.code));
     }
 }
 const [formData, setFormData] = useState({
