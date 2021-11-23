@@ -1,4 +1,2 @@
-Si estas por aqui es por que deseguro encontraste un APP de Huerto inteligente.
-
-Anexo fotos
+# Bienvenido a la herramienta que te ayudara a tener un control sobre tus hertos
 
